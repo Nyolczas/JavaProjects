@@ -25,7 +25,11 @@ public class AlarmClock {
     }
 
     public static void main(String[] args){
+        int nextHour;
+        int nextMinute;
+
+
         AlarmClock ac = new AlarmClock();
-        ac.checkAlarm(51);
+        ac.checkAlarm(7);
     }
 }
