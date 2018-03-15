@@ -1,6 +1,6 @@
 public class Clock {
 
-    private int Hours,Minutes,Seconds;
+    protected int Hours,Minutes,Seconds;
 
     public void tick(){
         Seconds = Seconds + 1;
