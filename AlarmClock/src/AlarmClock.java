@@ -1,23 +1,31 @@
-public class AlarmClock extends Clock{
+import javax.swing.JOptionPane;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
-    private int SetSeconds, SetMinutes, SetHours;
-
-    public  AlarmClock(int a, int b, int c){
-        SetHours   = a;
-        SetMinutes = b;
-        SetSeconds = c;
+public class AlarmClock {
+    public void checkAlarm (final int a){
+        Thread t = new Thread(){
+            public void run()
+            {
+                int wl=0;
+                while(wl==0)
+                {
+                    Calendar c = new GregorianCalendar();
+                    int hours = c.get(Calendar.HOUR);
+                    int mins  = c.get(Calendar.MINUTE);
+                    if(a == mins){
+                        JOptionPane.showMessageDialog(null,"Most "+ hours +":" + mins +" van. Ideje egy kis pihenőt tartani!");
+                        break;
+                    }
+                }
+            }
+        };
+        t.setPriority(Thread.MIN_PRIORITY);
+        t.start();
     }
 
-    public void tick(){
-        Seconds = Seconds + 1;
-        Minutes = Minutes + Seconds / 60;
-        Hours   = Hours   + Minutes / 60;
-        Seconds = Seconds % 60;
-        Minutes = Minutes % 60;
-        Hours   = Hours   % 24;
-        if (Hours == SetHours && Minutes == SetMinutes && Seconds == SetSeconds) {
-            System.out.println("****************");
-            System.out.println(Hours + ":" + Minutes + ":" + Seconds + "\t" + SetHours + ":" + SetMinutes + ":" + SetSeconds);
-        }
+    public static void main(String[] args){
+        AlarmClock ac = new AlarmClock();
+        ac.checkAlarm(51);
     }
 }
