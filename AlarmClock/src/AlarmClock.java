@@ -30,6 +30,6 @@ public class AlarmClock {
 
 
         AlarmClock ac = new AlarmClock();
-        ac.checkAlarm(4);
+        ac.checkAlarm(52);
     }
 }
