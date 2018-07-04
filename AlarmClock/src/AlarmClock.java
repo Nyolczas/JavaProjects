@@ -30,6 +30,17 @@ public class AlarmClock {
 
 
         AlarmClock ac = new AlarmClock();
-        ac.checkAlarm(52);
+        ac.checkAlarm(0);
+        ac.checkAlarm(5);
+        ac.checkAlarm(10);
+        ac.checkAlarm(15);
+        ac.checkAlarm(20);
+        ac.checkAlarm(25);
+        ac.checkAlarm(30);
+        ac.checkAlarm(35);
+        ac.checkAlarm(40);
+        ac.checkAlarm(45);
+        ac.checkAlarm(50);
+        ac.checkAlarm(55);
     }
 }
